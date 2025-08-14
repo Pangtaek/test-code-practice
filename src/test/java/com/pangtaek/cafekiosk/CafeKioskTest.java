@@ -4,6 +4,7 @@ import com.pangtaek.cafekiosk.unit.CafeKiosk;
 import com.pangtaek.cafekiosk.unit.beverage.Americano;
 import com.pangtaek.cafekiosk.unit.beverage.Latte;
 import com.pangtaek.cafekiosk.unit.order.Order;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -23,6 +24,7 @@ class CafeKioskTest {
         System.out.println(">>> 담긴 음료: " + cafeKiosk.getBeverageList().get(0).getName());
     }
 
+    @DisplayName("음료 1개 추가 테스트")
     @Test
     void add() {
         CafeKiosk cafeKiosk = new CafeKiosk();

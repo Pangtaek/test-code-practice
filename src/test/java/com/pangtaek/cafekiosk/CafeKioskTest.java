@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 class CafeKioskTest {
@@ -27,6 +28,27 @@ class CafeKioskTest {
 
     assertThat(cafeKiosk.getBeverageList().size()).isEqualTo(1);
     assertThat(cafeKiosk.getBeverageList().get(0).getName()).isEqualTo("Americano");
+  }
+
+  @Test
+  void addSeveralBeverages() {
+    CafeKiosk cafeKiosk = new CafeKiosk();
+    Americano americano = new Americano();
+
+    cafeKiosk.add(americano, 2);
+
+    assertThat(cafeKiosk.getBeverageList().get(0)).isEqualTo(americano);
+    assertThat(cafeKiosk.getBeverageList().get(1)).isEqualTo(americano);
+  }
+
+  @Test
+  void addZeroBeverages() {
+    CafeKiosk cafeKiosk = new CafeKiosk();
+    Americano americano = new Americano();
+
+    assertThatThrownBy(() -> cafeKiosk.add(americano, 0))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("음료는 1잔 이상 주문하실 수 있습니다.");
   }
 
   @Test

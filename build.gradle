@@ -17,6 +17,12 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
+    // ✅ Mockito 에이전트 전용: 단일 JAR만 포함되도록 설정
+    mockitoAgent {
+        canBeResolved = true
+        canBeConsumed = false
+        transitive = false   // ← 이것이 핵심!
+    }
 }
 
 repositories {
@@ -38,8 +44,13 @@ dependencies {
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // ✅ -javaagent로 붙일 mockito-core (버전은 Spring BOM이 관리)
+    mockitoAgent 'org.mockito:mockito-core'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+    // ✅ mockito-core 단일 JAR을 -javaagent로 주입
+    jvmArgs "-javaagent:${configurations.mockitoAgent.singleFile}"
 }

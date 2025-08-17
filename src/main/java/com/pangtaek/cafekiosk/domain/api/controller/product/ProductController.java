@@ -1,7 +1,7 @@
-package com.pangtaek.cafekiosk.domain.api.controller;
+package com.pangtaek.cafekiosk.domain.api.controller.product;
 
 import com.pangtaek.cafekiosk.domain.api.service.product.ProductService;
-import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
+import com.pangtaek.cafekiosk.domain.api.controller.product.response.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

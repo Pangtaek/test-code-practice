@@ -1,5 +1,9 @@
-package com.pangtaek.cafekiosk.domain.product;
+package com.pangtaek.cafekiosk.domain.api.product.repository;
 
+import com.pangtaek.cafekiosk.domain.product.Product;
+import com.pangtaek.cafekiosk.domain.product.ProductRepository;
+import com.pangtaek.cafekiosk.domain.product.ProductSellingStatus;
+import com.pangtaek.cafekiosk.domain.product.ProductType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

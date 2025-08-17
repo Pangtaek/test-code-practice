@@ -1,6 +1,6 @@
 package com.pangtaek.cafekiosk.domain.api.service.product;
 
-import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
+import com.pangtaek.cafekiosk.domain.api.controller.product.response.ProductResponse;
 import com.pangtaek.cafekiosk.domain.product.Product;
 import com.pangtaek.cafekiosk.domain.product.ProductRepository;
 import com.pangtaek.cafekiosk.domain.product.ProductSellingStatus;

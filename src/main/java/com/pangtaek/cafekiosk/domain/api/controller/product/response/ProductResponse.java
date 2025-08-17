@@ -1,4 +1,4 @@
-package com.pangtaek.cafekiosk.domain.api.service.product.response;
+package com.pangtaek.cafekiosk.domain.api.controller.product.response;
 
 import com.pangtaek.cafekiosk.domain.product.Product;
 import com.pangtaek.cafekiosk.domain.product.ProductSellingStatus;

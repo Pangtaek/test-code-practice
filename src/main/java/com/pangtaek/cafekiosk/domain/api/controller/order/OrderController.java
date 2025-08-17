@@ -17,7 +17,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping(value = "/api/v1/orders/new")
-    public OrderResponseg createOrder(@RequestBody OrderCreateRequest request) {
+    public OrderResponse createOrder(@RequestBody OrderCreateRequest request) {
         return orderService.createOrder(request, LocalDateTime.now());
     }
 }

@@ -1,6 +1,7 @@
 package com.pangtaek.cafekiosk.domain.api.service.product;
 
 import com.pangtaek.cafekiosk.domain.api.controller.product.dto.request.ProductCreateRequest;
+import com.pangtaek.cafekiosk.domain.api.service.product.request.ProductCreateServiceRequest;
 import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
 import com.pangtaek.cafekiosk.domain.product.Product;
 import com.pangtaek.cafekiosk.domain.product.ProductRepository;
@@ -17,7 +18,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public ProductResponse createProduct(ProductCreateRequest request) {
+    public ProductResponse createProduct(ProductCreateServiceRequest request) {
 
         String nextProductNumber = createNextProductNumber();
 

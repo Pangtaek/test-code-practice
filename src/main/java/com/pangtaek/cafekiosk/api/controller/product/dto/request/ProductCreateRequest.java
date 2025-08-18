@@ -1,6 +1,6 @@
-package com.pangtaek.cafekiosk.domain.api.controller.product.dto.request;
+package com.pangtaek.cafekiosk.api.controller.product.dto.request;
 
-import com.pangtaek.cafekiosk.domain.api.service.product.request.ProductCreateServiceRequest;
+import com.pangtaek.cafekiosk.api.service.product.request.ProductCreateServiceRequest;
 import com.pangtaek.cafekiosk.domain.product.Product;
 import com.pangtaek.cafekiosk.domain.product.ProductSellingStatus;
 import com.pangtaek.cafekiosk.domain.product.ProductType;

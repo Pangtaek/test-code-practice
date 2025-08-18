@@ -1,4 +1,4 @@
-package com.pangtaek.cafekiosk.domain.api;
+package com.pangtaek.cafekiosk.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;

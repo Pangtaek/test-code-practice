@@ -1,9 +1,10 @@
 package com.pangtaek.cafekiosk.domain.api.controller.product;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pangtaek.cafekiosk.domain.api.controller.product.dto.request.ProductCreateRequest;
-import com.pangtaek.cafekiosk.domain.api.service.product.ProductService;
-import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
+import com.pangtaek.cafekiosk.api.controller.product.ProductController;
+import com.pangtaek.cafekiosk.api.controller.product.dto.request.ProductCreateRequest;
+import com.pangtaek.cafekiosk.api.service.product.ProductService;
+import com.pangtaek.cafekiosk.api.service.product.response.ProductResponse;
 import com.pangtaek.cafekiosk.domain.product.ProductSellingStatus;
 import com.pangtaek.cafekiosk.domain.product.ProductType;
 import org.junit.jupiter.api.DisplayName;

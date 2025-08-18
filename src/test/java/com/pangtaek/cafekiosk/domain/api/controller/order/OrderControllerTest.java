@@ -1,8 +1,9 @@
 package com.pangtaek.cafekiosk.domain.api.controller.order;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pangtaek.cafekiosk.domain.api.controller.order.request.OrderCreateRequest;
-import com.pangtaek.cafekiosk.domain.api.service.order.OrderService;
+import com.pangtaek.cafekiosk.api.controller.order.OrderController;
+import com.pangtaek.cafekiosk.api.controller.order.request.OrderCreateRequest;
+import com.pangtaek.cafekiosk.api.service.order.OrderService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

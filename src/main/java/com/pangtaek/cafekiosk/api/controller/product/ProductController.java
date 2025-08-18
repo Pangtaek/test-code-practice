@@ -1,9 +1,9 @@
-package com.pangtaek.cafekiosk.domain.api.controller.product;
+package com.pangtaek.cafekiosk.api.controller.product;
 
-import com.pangtaek.cafekiosk.domain.api.ApiResponse;
-import com.pangtaek.cafekiosk.domain.api.controller.product.dto.request.ProductCreateRequest;
-import com.pangtaek.cafekiosk.domain.api.service.product.ProductService;
-import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
+import com.pangtaek.cafekiosk.api.service.product.ProductService;
+import com.pangtaek.cafekiosk.api.ApiResponse;
+import com.pangtaek.cafekiosk.api.controller.product.dto.request.ProductCreateRequest;
+import com.pangtaek.cafekiosk.api.service.product.response.ProductResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

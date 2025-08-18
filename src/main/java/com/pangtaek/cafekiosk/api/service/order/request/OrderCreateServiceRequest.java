@@ -1,4 +1,4 @@
-package com.pangtaek.cafekiosk.domain.api.service.order.request;
+package com.pangtaek.cafekiosk.api.service.order.request;
 
 import lombok.Builder;
 import lombok.Getter;

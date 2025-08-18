@@ -4,6 +4,7 @@ import com.pangtaek.cafekiosk.domain.orderproduct.OrderProduct;
 import com.pangtaek.cafekiosk.domain.product.Product;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -32,8 +33,9 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderProduct> orderProductList = new ArrayList<>();
 
-    public Order(List<Product> productList, LocalDateTime registeredDateTime) {
-        this.status = OrderStatus.INIT;
+    @Builder
+    private Order(List<Product> productList, OrderStatus orderStatus, LocalDateTime registeredDateTime) {
+        this.status = orderStatus;
         this.totalPrice = calculateTotalPrice(productList);
         this.registeredDateTime = registeredDateTime;
         this.orderProductList = productList.stream()
@@ -42,7 +44,11 @@ public class Order {
     }
 
     public static Order create(List<Product> productList, LocalDateTime registeredDateTime) {
-        return new Order(productList, registeredDateTime);
+        return Order.builder()
+                .orderStatus(OrderStatus.INIT)
+                .productList(productList)
+                .registeredDateTime(registeredDateTime)
+                .build();
     }
 
     private static int calculateTotalPrice(List<Product> productList) {

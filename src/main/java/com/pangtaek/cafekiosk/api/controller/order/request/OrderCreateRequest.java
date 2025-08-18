@@ -1,6 +1,6 @@
-package com.pangtaek.cafekiosk.domain.api.controller.order.request;
+package com.pangtaek.cafekiosk.api.controller.order.request;
 
-import com.pangtaek.cafekiosk.domain.api.service.order.request.OrderCreateServiceRequest;
+import com.pangtaek.cafekiosk.api.service.order.request.OrderCreateServiceRequest;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Getter;

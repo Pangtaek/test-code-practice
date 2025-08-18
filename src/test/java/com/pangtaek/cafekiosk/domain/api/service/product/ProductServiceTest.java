@@ -1,7 +1,9 @@
 package com.pangtaek.cafekiosk.domain.api.service.product;
 
-import com.pangtaek.cafekiosk.domain.api.controller.product.dto.request.ProductCreateRequest;
-import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
+import com.pangtaek.cafekiosk.api.controller.product.dto.request.ProductCreateRequest;
+import com.pangtaek.cafekiosk.api.service.product.ProductService;
+import com.pangtaek.cafekiosk.api.service.product.request.ProductCreateServiceRequest;
+import com.pangtaek.cafekiosk.api.service.product.response.ProductResponse;
 import com.pangtaek.cafekiosk.domain.product.Product;
 import com.pangtaek.cafekiosk.domain.product.ProductRepository;
 import com.pangtaek.cafekiosk.domain.product.ProductSellingStatus;
@@ -40,7 +42,7 @@ class ProductServiceTest {
         Product product1 = createProduct("001", ProductType.HANDMADE, ProductSellingStatus.SELLING, "아메리카노", 4000);
         productRepository.saveAll(List.of(product1));
 
-        ProductCreateRequest request = ProductCreateRequest.builder()
+        ProductCreateServiceRequest request = ProductCreateServiceRequest.builder()
                 .type(ProductType.HANDMADE)
                 .sellingStatus(ProductSellingStatus.SELLING)
                 .name("카푸치노")
@@ -70,7 +72,7 @@ class ProductServiceTest {
     @DisplayName("상품이 하나도 없는 경우 신규 상품을 등록하면, 상품 번호는 001이다.")
     void createProductWhenProductsIsEmpty() {
         // given
-        ProductCreateRequest request = ProductCreateRequest.builder()
+        ProductCreateServiceRequest request = ProductCreateServiceRequest.builder()
                 .type(ProductType.HANDMADE)
                 .sellingStatus(ProductSellingStatus.SELLING)
                 .name("카푸치노")

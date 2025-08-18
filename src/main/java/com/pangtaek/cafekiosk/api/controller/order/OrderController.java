@@ -1,9 +1,9 @@
-package com.pangtaek.cafekiosk.domain.api.controller.order;
+package com.pangtaek.cafekiosk.api.controller.order;
 
-import com.pangtaek.cafekiosk.domain.api.ApiResponse;
-import com.pangtaek.cafekiosk.domain.api.controller.order.request.OrderCreateRequest;
-import com.pangtaek.cafekiosk.domain.api.service.order.OrderService;
-import com.pangtaek.cafekiosk.domain.api.service.order.response.OrderResponse;
+import com.pangtaek.cafekiosk.api.ApiResponse;
+import com.pangtaek.cafekiosk.api.controller.order.request.OrderCreateRequest;
+import com.pangtaek.cafekiosk.api.service.order.OrderService;
+import com.pangtaek.cafekiosk.api.service.order.response.OrderResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

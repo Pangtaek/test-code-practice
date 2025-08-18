@@ -1,6 +1,6 @@
-package com.pangtaek.cafekiosk.domain.api.service.order.response;
+package com.pangtaek.cafekiosk.api.service.order.response;
 
-import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
+import com.pangtaek.cafekiosk.api.service.product.response.ProductResponse;
 import com.pangtaek.cafekiosk.domain.order.Order;
 import lombok.Builder;
 import lombok.Getter;

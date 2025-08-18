@@ -1,4 +1,4 @@
-package com.pangtaek.cafekiosk.api.service;
+package com.pangtaek.cafekiosk.api.service.mail;
 
 import com.pangtaek.cafekiosk.client.mail.MailSendClient;
 import com.pangtaek.cafekiosk.domain.history.mail.MailSendHistory;

@@ -1,6 +1,6 @@
 package com.pangtaek.cafekiosk.api.service.order;
 
-import com.pangtaek.cafekiosk.api.service.MailService;
+import com.pangtaek.cafekiosk.api.service.mail.MailService;
 import com.pangtaek.cafekiosk.domain.order.Order;
 import com.pangtaek.cafekiosk.domain.order.OrderRepository;
 import com.pangtaek.cafekiosk.domain.order.OrderStatus;

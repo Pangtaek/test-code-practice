@@ -1,5 +1,6 @@
 package com.pangtaek.cafekiosk.domain.api.service.product;
 
+import com.pangtaek.cafekiosk.domain.api.controller.product.dto.request.ProductCreateRequest;
 import com.pangtaek.cafekiosk.domain.api.service.product.response.ProductResponse;
 import com.pangtaek.cafekiosk.domain.product.Product;
 import com.pangtaek.cafekiosk.domain.product.ProductRepository;
@@ -16,11 +17,34 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    public ProductResponse createProduct(ProductCreateRequest request) {
+
+        String nextProductNumber = createNextProductNumber();
+
+        Product product = request.toEntity(nextProductNumber);
+        Product savedProduct = productRepository.save(product);
+
+        return ProductResponse.of(savedProduct);
+    }
+
     public List<ProductResponse> getSellingProductList() {
-        List<Product> productList =  productRepository.findAllBySellingStatusIn(ProductSellingStatus.forDisplay());
+        List<Product> productList = productRepository.findAllBySellingStatusIn(ProductSellingStatus.forDisplay());
 
         return productList.stream()
                 .map(ProductResponse::of)
                 .collect(Collectors.toList());
+    }
+
+    private String createNextProductNumber() {
+        String latestProductNumber = productRepository.findLatestProduct();
+
+        if (latestProductNumber == null) {
+            return "001";
+        }
+
+        int latestProductNumberInt = Integer.parseInt(latestProductNumber);
+        int nextProductNumberInt = latestProductNumberInt + 1;
+
+        return String.format("%03d", nextProductNumberInt);
     }
 }

@@ -1,6 +1,7 @@
 package com.pangtaek.cafekiosk.domain.api.service.order;
 
 import com.pangtaek.cafekiosk.domain.api.controller.order.request.OrderCreateRequest;
+import com.pangtaek.cafekiosk.domain.api.service.order.request.OrderCreateServiceRequest;
 import com.pangtaek.cafekiosk.domain.api.service.order.response.OrderResponse;
 import com.pangtaek.cafekiosk.domain.order.Order;
 import com.pangtaek.cafekiosk.domain.order.OrderRepository;
@@ -28,7 +29,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final StockRepository stockRepository;
 
-    public OrderResponse createOrder(OrderCreateRequest request, LocalDateTime registeredDateTime) {
+    public OrderResponse createOrder(OrderCreateServiceRequest request, LocalDateTime registeredDateTime) {
         List<String> productNumberList = request.getProductNumberList();
         List<Product> duplicateProduct = findProductListBy(productNumberList);
 

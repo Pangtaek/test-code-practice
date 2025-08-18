@@ -6,23 +6,23 @@ import com.pangtaek.cafekiosk.domain.history.mail.MailSendHistoryRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Spy;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
 
 @ExtendWith(MockitoExtension.class)
 @ActiveProfiles(value = "test")
 class MailServiceTest {
 
-    //    @Mock
-    @Spy
+    @Mock
     private MailSendClient mailSendClient;
 
     @Mock
@@ -35,18 +35,14 @@ class MailServiceTest {
     @DisplayName("메일 전송 성공 시 이력 저장하고 true 반환")
     void sendMail_success() {
         // given
-//        when(mailSendClient.sendEmail(anyString(), anyString(), anyString(), anyString()))
-//                .thenReturn(true);
-        doReturn(true)
-                .when(mailSendClient)
-                .sendEmail(anyString(), anyString(), anyString(), anyString());
-
+        BDDMockito.given(mailSendClient.sendEmail(anyString(), anyString(), anyString(), anyString()))
+                .willReturn(true);
 
         // when
         boolean result = mailService.sendMail("to", "sub", "body", "from");
 
         // then
-        verify(mailSendHistoryRepository, times(1)).save(any(MailSendHistory.class));
+        Mockito.verify(mailSendHistoryRepository, times(1)).save(any(MailSendHistory.class));
         assertThat(result).isTrue();
     }
 }
